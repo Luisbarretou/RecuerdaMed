@@ -1,9 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:recuerdamed/components/logo_tile.dart';
 import 'package:recuerdamed/components/my_button.dart';
 import 'package:recuerdamed/components/my_textfield.dart';
-import 'package:recuerdamed/ui/principal/inicio.dart';
-import 'package:recuerdamed/ui/principal/registro.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -131,15 +131,38 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                InkWell(
-                  onTap: () => {Navigator.pushNamed(context, '/registro')},
-                  child: const Text(
-                    '<Crea una cuenta aqui>',
-                    style: TextStyle(
-                      color: Color(0xFF616161),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'No tienes cuenta?',
+                      style: TextStyle(
+                        color: Color(0xFF757575),
+                        fontSize: 12
+                      ),
                     ),
-                  ),
+                    const SizedBox(width: 5,),
+                    InkWell(
+                      onTap: () => {Navigator.pushNamed(context, '/registro')},
+                      child: const Text(
+                        'Crea una aquí',
+                        style: TextStyle(
+                            color: Color(0xFF3E517A),
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    )
+                  ],
                 )
+                // InkWell(
+                //   onTap: () => {Navigator.pushNamed(context, '/registro')},
+                //   child: const Text(
+                //     '<Crea una cuenta aqui>',
+                //     style: TextStyle(
+                //       color: Color(0xFF616161),
+                //     ),
+                //   ),
+                // )
               ],
             ),
           ),
