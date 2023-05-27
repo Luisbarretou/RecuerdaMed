@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recuerdamed/ui/menu/menu_lateral.dart';
 import 'package:recuerdamed/ui/pages/pagina_login.dart';
-import 'package:recuerdamed/ui/principal/estructura.dart';
 import 'package:recuerdamed/ui/principal/inicio.dart';
 import 'package:recuerdamed/ui/principal/registro.dart';
 
