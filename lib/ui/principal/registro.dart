@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:recuerdamed/ui/formularios/formulario.dart';
 
 void main() => runApp(registro());
 
@@ -8,9 +11,7 @@ class registro extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
-        body: const Center(
-          child: Text('Registrar datos adicionales'),
-        ),
+        body: FormularioRegistro(),
       ),
     );
   }
