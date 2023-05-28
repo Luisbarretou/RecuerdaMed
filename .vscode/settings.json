@@ -1,0 +1,5 @@
+{
+  "editor.cursorBlinking": "blink",
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

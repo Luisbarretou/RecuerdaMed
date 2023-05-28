@@ -136,20 +136,18 @@ class LoginPage extends StatelessWidget {
                   children: [
                     Text(
                       'No tienes cuenta?',
-                      style: TextStyle(
-                        color: Color(0xFF757575),
-                        fontSize: 12
-                      ),
+                      style: TextStyle(color: Color(0xFF757575), fontSize: 12),
                     ),
-                    const SizedBox(width: 5,),
+                    const SizedBox(
+                      width: 5,
+                    ),
                     InkWell(
                       onTap: () => {Navigator.pushNamed(context, '/registro')},
                       child: const Text(
                         'Crea una aquí',
                         style: TextStyle(
                             color: Color(0xFF3E517A),
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                     )
                   ],
@@ -166,6 +164,8 @@ class LoginPage extends StatelessWidget {
               ],
             ),
           ),
-        )));
+        )
+      )
+    );
   }
 }
