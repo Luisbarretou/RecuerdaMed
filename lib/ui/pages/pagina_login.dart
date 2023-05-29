@@ -12,9 +12,6 @@ class PaginaLogin extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  //Prueba
-  void iniciarSesions() {}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
