@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:recuerdamed/ui/menu/menu_lateral.dart';
 
-void main() => runApp(inicio());
+void main() => runApp(PaginaHome());
 
-class inicio extends StatelessWidget {
+class PaginaHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

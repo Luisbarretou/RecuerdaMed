@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:recuerdamed/ui/pages/pagina_login.dart';
-import 'package:recuerdamed/ui/principal/inicio.dart';
-import 'package:recuerdamed/ui/principal/registro.dart';
+import 'package:recuerdamed/ui/principal/pagina_main.dart';
+import 'package:recuerdamed/ui/principal/pagina_inicio.dart';
+import 'package:recuerdamed/ui/pages/pagina_registro.dart';
+//import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() /*async*/ {
+  //WidgetsFlutterBinding.ensureInitialized();
+
+  //await Firebase.initializeApp();
+  
   runApp(const MyApp());
 }
 
@@ -38,9 +44,10 @@ class MyApp extends StatelessWidget {
       //home: LoginPage(),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
-        '/registro': (context) => registro(),
-        '/inicio': (context) => inicio()
+        '/': (context) => PaginaInicio(),
+        '/login': (context) => PaginaLogin(),
+        '/registro': (context) => PaginaRegistro(),
+        '/home': (context) => PaginaHome()
       },
     );
   }

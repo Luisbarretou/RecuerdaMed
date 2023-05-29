@@ -5,8 +5,8 @@ import 'package:recuerdamed/components/logo_tile.dart';
 import 'package:recuerdamed/components/my_button.dart';
 import 'package:recuerdamed/components/my_textfield.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class PaginaLogin extends StatelessWidget {
+  PaginaLogin({super.key});
 
   //Edicion de texto controller
   final usernameController = TextEditingController();
@@ -20,18 +20,15 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: const Color(0xFFE0E0E0),
         body: SafeArea(
-            child: Center(
+          child: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 70,
-                ),
                 //Logo
                 Image.asset(
-                  'assets/images/logo.png',
-                  width: 250,
+                  'assets/images/login.png',
+                  width: 80,
                 ),
                 const SizedBox(
                   height: 50,
@@ -84,7 +81,7 @@ class LoginPage extends StatelessWidget {
                 //Boton de inicio de sesion
                 MyButton(
                   onPressed: () => {},
-                  routeName: '/inicio',
+                  routeName: '/home',
                 ),
                 const SizedBox(
                   height: 50,

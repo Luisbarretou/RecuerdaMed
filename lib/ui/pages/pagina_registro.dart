@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:recuerdamed/ui/formularios/formulario.dart';
+import 'package:recuerdamed/ui/formularios/formulario_registro.dart';
 
-void main() => runApp(registro());
+void main() => runApp(PaginaRegistro());
 
-class registro extends StatelessWidget {
+class PaginaRegistro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
