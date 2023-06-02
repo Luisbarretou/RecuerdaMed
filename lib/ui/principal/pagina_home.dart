@@ -3,16 +3,38 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:recuerdamed/ui/menu/menu_lateral.dart';
+import 'package:recuerdamed/ui/principal/pagina_inicio.dart';
 
 void main() => runApp(PaginaHome());
 
-class PaginaHome extends StatelessWidget {
+class PaginaHome extends StatefulWidget {
   PaginaHome({super.key});
 
-  final user = FirebaseAuth.instance.currentUser!;
+  @override
+  State<PaginaHome> createState() => _PaginaHomeState();
+}
 
-  void cerrarSesion() {
-    FirebaseAuth.instance.signOut();
+class _PaginaHomeState extends State<PaginaHome> {
+  String message = '';
+
+  @override
+  void initState() {
+    super.initState();
+    estaLogueado();
+  }
+
+  void estaLogueado() {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      String username = user.displayName ?? user.email ?? 'Usuario';
+      setState(() {
+        message = 'Bienvenido: $username';
+      });
+    } else {
+      setState(() {
+        message = 'Bienvenido invitado';
+      });
+    }
   }
 
   @override
@@ -28,14 +50,18 @@ class PaginaHome extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: cerrarSesion,
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PaginaInicio()));
+              },
               icon: Icon(Icons.logout_rounded),
             ),
           ],
         ),
         body: Center(
           child:
-              Text("Bievenido: " + user.email!, style: TextStyle(fontSize: 30)),
+              Text(message /*+ user.email!*/, style: TextStyle(fontSize: 30)),
         ),
       ),
     );

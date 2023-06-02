@@ -75,10 +75,6 @@ class PaginaInicio extends StatelessWidget {
           ),
         ),
       ),
-
-      //Boton Iniciar Sesion Cuenta
-
-      //Boton Registrar Cuenta
     );
   }
 }

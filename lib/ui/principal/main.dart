@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recuerdamed/ui/pages/auth_page.dart';
 import 'package:recuerdamed/ui/principal/pagina_home.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:recuerdamed/ui/principal/pagina_inicio.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,9 +32,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => AuthPage(),
+        '/': (context) => PaginaInicio(),
         // '/login': (context) => PaginaLogin(),
         // '/registro': (context) => PaginaRegistro(),
+        '/login': (context) => AuthPage(),
         '/home': (context) => PaginaHome()
       },
     );
