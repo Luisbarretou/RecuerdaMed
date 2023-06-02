@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "205518094323",
+    "project_id": "recuerdamed-20587",
+    "storage_bucket": "recuerdamed-20587.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205518094323:android:01b9fa87c02298b3ac9c86",
+        "android_client_info": {
+          "package_name": "com.recuerdamed.recuerdamed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205518094323-1bgolg9mcf4ogljlvi0ad5ss8097b46c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.recuerdamed.recuerdamed",
+            "certificate_hash": "4eb88b76fa6cb52f7448f0b522046ef8c6da166d"
+          }
+        },
+        {
+          "client_id": "205518094323-u62ttmlcjh8drmlj5l441648m71ss0vn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSE2TAHa4xKwuN2bWvvz8CuYoZsrLzDWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205518094323-u62ttmlcjh8drmlj5l441648m71ss0vn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "205518094323-18gufkpk7k9rb4h2ampv123lmcddr52n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.recuerdamed.recuerdamed"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
