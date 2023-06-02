@@ -1,5 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:recuerdamed/interfaces/interface_control_medicacion.dart';
+import 'package:recuerdamed/interfaces/interface_farmacia_registrar.dart';
 import 'package:recuerdamed/interfaces/interface_perfil_usuario.dart';
+import 'package:recuerdamed/interfaces/interface_receta_form.dart';
 
 void main() => runApp(const MenuLateral());
 
@@ -27,25 +32,24 @@ class MenuLateral extends StatelessWidget {
               Icon(Icons.assignment_outlined, color: Color(0xFF6A7DBA)),
               'Mi Receta Medica',
               MaterialPageRoute(
-                  builder: (BuildContext context) => InterfacePerfilUsuario())),
+                  builder: (BuildContext context) => InterfaceReceta())),
           _itemMenu(
               context,
               Icon(Icons.analytics_outlined, color: Color(0xFF6A7DBA)),
               'Control',
               MaterialPageRoute(
-                  builder: (BuildContext context) => InterfacePerfilUsuario())),
-          _itemMenu(
+                  builder: (BuildContext context) => PatientControlPage())),
+          /*_itemMenu(
               context,
               Icon(Icons.article_outlined, color: Color(0xFF6A7DBA)),
               'Reportes',
               MaterialPageRoute(
-                  builder: (BuildContext context) => InterfacePerfilUsuario())),
+                  builder: (BuildContext context) => InterfacePerfilUsuario())),*/
           _itemMenu(
               context,
               Icon(Icons.add_business_outlined, color: Color(0xFF6A7DBA)),
               'Añadir Farmacia',
-              MaterialPageRoute(
-                  builder: (BuildContext context) => InterfacePerfilUsuario())),
+              MaterialPageRoute(builder: (BuildContext context) => FormCard())),
           _itemMenu(
               context,
               Icon(Icons.logout_outlined, color: Color(0xFF6A7DBA)),
