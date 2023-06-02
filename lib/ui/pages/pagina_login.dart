@@ -6,17 +6,82 @@ import 'package:recuerdamed/components/logo_tile.dart';
 import 'package:recuerdamed/components/my_button.dart';
 import 'package:recuerdamed/components/my_textfield.dart';
 
-class PaginaLogin extends StatelessWidget {
-  PaginaLogin({super.key});
+class PaginaLogin extends StatefulWidget {
+  final Function()? onTap;
+  PaginaLogin({super.key, required this.onTap});
 
+  @override
+  State<PaginaLogin> createState() => _PaginaLoginState();
+}
+
+class _PaginaLoginState extends State<PaginaLogin> {
   //Edicion de texto controller
   final usernameController = TextEditingController();
+
   final passwordController = TextEditingController();
 
-  Future iniciarSesion() async {
-     await FirebaseAuth.instance.signInWithEmailAndPassword(
-       email: usernameController.text.trim(),
-       password: passwordController.text.trim()
+  void iniciarSesion() async {
+    //Spinner de carga
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: usernameController.text, password: passwordController.text);
+      //Cierra el spinner una vez cargado
+      Navigator.pop(context);
+    } on FirebaseException catch (e) {
+      //Cierra el spinner una vez cargado
+      Navigator.pop(context);
+      if (e.code == 'user-not-found') {
+        //Verifica si el email esta registrado
+        //print('Email no registrado');
+        emailNoRegistrado();
+      } else if (e.code == 'wrong-password') {
+        //Verifica si la contraseña es válida del correo ingresado
+        //print('Contraseña inválida');
+        contraseniaInvalida();
+      }
+    }
+  }
+
+  void emailNoRegistrado() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Color(0xFF636CFF),
+          title: Center(
+            child: Text(
+              'Email no registrado',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void contraseniaInvalida() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Color(0xFF636CFF),
+          title: Center(
+            child: Text(
+              'Contraseña no válida',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -44,7 +109,7 @@ class PaginaLogin extends StatelessWidget {
                 //Campo Nombre de usuario
                 MyTextField(
                   controller: usernameController,
-                  hintText: 'Usuario',
+                  hintText: 'Email',
                   obscureText: false,
                 ),
                 const SizedBox(
@@ -77,9 +142,28 @@ class PaginaLogin extends StatelessWidget {
                 ),
                 //Boton de inicio de sesion
                 MyButton(
-                  onPressed: () => {iniciarSesion()},
-                  routeName: '/home',
+                  onTap: iniciarSesion,
+                  labelButton: 'Iniciar Sesion',
                 ),
+                // Container(
+                //   margin: const EdgeInsets.symmetric(horizontal: 25),
+                //   child: ElevatedButton(
+                //     style: ElevatedButton.styleFrom(
+                //         backgroundColor: const Color(0xFF6C63FF),
+                //         fixedSize: const Size(double.infinity, 50),
+                //         shape: RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.circular(8))),
+                //     onPressed: () {
+                //       iniciarSesion();
+                //     },
+                //     child: const Center(
+                //       child: Text(
+                //         'Iniciar Sesion',
+                //         style: TextStyle(color: Colors.white, fontSize: 18),
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 const SizedBox(
                   height: 25,
                 ),
@@ -138,7 +222,8 @@ class PaginaLogin extends StatelessWidget {
                       width: 5,
                     ),
                     InkWell(
-                      onTap: () => {Navigator.pushNamed(context, '/registro')},
+                      onTap: widget
+                          .onTap /*() => {Navigator.pushNamed(context, '/registro')}*/,
                       child: const Text(
                         'Crea una aquí',
                         style: TextStyle(
