@@ -1,5 +1,9 @@
 {
   "editor.cursorBlinking": "blink",
   "editor.formatOnSave": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  }
 }

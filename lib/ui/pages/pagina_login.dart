@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:recuerdamed/components/logo_tile.dart';
 import 'package:recuerdamed/components/my_button.dart';
@@ -12,16 +13,26 @@ class PaginaLogin extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
+  Future iniciarSesion() async {
+     await FirebaseAuth.instance.signInWithEmailAndPassword(
+       email: usernameController.text.trim(),
+       password: passwordController.text.trim()
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFFE0E0E0),
-        body: SafeArea(
-          child: Center(
+      backgroundColor: const Color(0xFFE0E0E0),
+      body: SafeArea(
+        child: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(
+                  height: 15,
+                ),
                 //Logo
                 Image.asset(
                   'assets/images/login.png',
@@ -29,17 +40,6 @@ class PaginaLogin extends StatelessWidget {
                 ),
                 const SizedBox(
                   height: 50,
-                ),
-                //Bienvenido
-                const Text(
-                  'Bienvenido!',
-                  style: TextStyle(
-                    color: Color(0xFF3E517A),
-                    fontSize: 20,
-                  ),
-                ),
-                const SizedBox(
-                  height: 25,
                 ),
                 //Campo Nombre de usuario
                 MyTextField(
@@ -77,11 +77,11 @@ class PaginaLogin extends StatelessWidget {
                 ),
                 //Boton de inicio de sesion
                 MyButton(
-                  onPressed: () => {},
+                  onPressed: () => {iniciarSesion()},
                   routeName: '/home',
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 25,
                 ),
                 //Continuar con
                 const Padding(
@@ -89,10 +89,11 @@ class PaginaLogin extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                          child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey,
-                      )),
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey,
+                        ),
+                      ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
@@ -101,15 +102,16 @@ class PaginaLogin extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                          child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey,
-                      )),
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey,
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 25,
                 ),
                 //Botones de inicio de sesion con google
                 const Row(
@@ -123,7 +125,7 @@ class PaginaLogin extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 25,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -140,26 +142,17 @@ class PaginaLogin extends StatelessWidget {
                       child: const Text(
                         'Crea una aquí',
                         style: TextStyle(
-                            color: Color(0xFF3E517A),
+                            color: Color(0xFF6C63FF),
                             fontWeight: FontWeight.bold),
                       ),
                     )
                   ],
-                )
-                // InkWell(
-                //   onTap: () => {Navigator.pushNamed(context, '/registro')},
-                //   child: const Text(
-                //     '<Crea una cuenta aqui>',
-                //     style: TextStyle(
-                //       color: Color(0xFF616161),
-                //     ),
-                //   ),
-                // )
+                ),
               ],
             ),
           ),
-        )
-      )
+        ),
+      ),
     );
   }
 }

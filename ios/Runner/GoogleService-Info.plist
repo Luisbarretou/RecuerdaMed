@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>205518094323-18gufkpk7k9rb4h2ampv123lmcddr52n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.205518094323-18gufkpk7k9rb4h2ampv123lmcddr52n</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>205518094323-1bgolg9mcf4ogljlvi0ad5ss8097b46c.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB7V4E0s6sPeiWH7e8TIQ0NbcKgNc4kzig</string>
+	<key>GCM_SENDER_ID</key>
+	<string>205518094323</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.recuerdamed.recuerdamed</string>
+	<key>PROJECT_ID</key>
+	<string>recuerdamed-20587</string>
+	<key>STORAGE_BUCKET</key>
+	<string>recuerdamed-20587.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:205518094323:ios:be4239455cb3ba44ac9c86</string>
+</dict>
+</plist>

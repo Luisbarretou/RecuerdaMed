@@ -11,12 +11,12 @@ class LogoTile extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(15),
         color: const Color(0xFFEEEEEE)
       ),
       child: Image.asset(
         imageLogo,
-        height: 40,
+        height: 35,
       ),
     );
   }
