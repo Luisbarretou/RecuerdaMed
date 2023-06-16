@@ -13,11 +13,18 @@ class _FormCardState extends State<FormCard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Color(0xFF718DEC),
+        title: Center(child: Text('Farmacia', textAlign: TextAlign.end)),
+      ),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
             child: Column(children: [
-              Image.asset('assets/images/farmacia.jpg'),
+              Image.asset(
+                'assets/images/farmacia.jpg',
+                width: 300,
+              ),
               const SizedBox(
                 height: 20,
               ),

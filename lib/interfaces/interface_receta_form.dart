@@ -12,6 +12,10 @@ class _inicioState extends State<InterfaceReceta> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      appBar: AppBar(
+        backgroundColor: Color(0xFF718DEC),
+        title: Center(child: Text('Receta', textAlign: TextAlign.end)),
+      ),
       body: SafeArea(
         child: Column(
           children: [
